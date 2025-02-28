@@ -1,9 +1,14 @@
 import './App.css'
 
+import { Video } from './components'
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello world</h1>
+    <div className="app">
+      <div className="videoContainer">
+        <Video />
+        <Video />
+      </div>
     </div>
   )
 }
