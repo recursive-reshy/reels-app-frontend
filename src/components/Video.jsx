@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 
 import { makeStyles } from 'tss-react/mui'
 
@@ -21,11 +21,25 @@ const Video = () => {
 
   const { classes } = useStyles()
 
+  const [ playing, setPlaying ] = useState(false)
+
+  const videoRef = useRef(null)
+
   return (
     <div className={classes.container}>
       <video
         className={classes.player}
+        ref={videoRef}
         src="https://videos.pexels.com/video-files/4434242/4434242-uhd_1440_2560_24fps.mp4"
+        onClick={ () => {
+          if(playing) {
+            videoRef.current.pause()
+            setPlaying(false)
+          } else {
+            videoRef.current.play()
+            setPlaying(true)
+          }
+        } }
         autoPlay
         loop	
       />
