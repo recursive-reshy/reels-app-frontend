@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+}
+
+html {
+  scroll-snap-type: y mandatory; /* snaps to the next video smoothly */
+}
+
+.app {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.videoContainer {
+  position: relative;
+  height: 800px;
+  width: 80%;
+  max-width: 500px;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  border-radius: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.videoContainer::-webkit-scrollbar {
+  display: none;
+}
