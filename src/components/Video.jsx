@@ -14,8 +14,33 @@ const useStyles = makeStyles()( theme => ( {
     objectFit: 'fill',
     width: '100%',
     height: '100%'
+  },
+  footer: {
+    position: 'relative',
+    bottom: 150,
+    marginLeft: 40,
+    width: '50%',
+    color: 'white',
+    border: '1px solid white'
+  },
+  text: {
+    padding: 4
   }
 } ) )
+
+const Footer = () => {
+
+  const { classes } = useStyles()
+
+  return (
+    <div className={classes.footer}>
+      <div>
+        <h3 className={classes.text}>@rbomb</h3>
+        <p className={classes.text}>Road trip</p>
+      </div>
+    </div>
+  )
+}
 
 const Video = () => {
 
@@ -43,6 +68,7 @@ const Video = () => {
         autoPlay
         loop	
       />
+      <Footer />
     </div>
   )
 }
